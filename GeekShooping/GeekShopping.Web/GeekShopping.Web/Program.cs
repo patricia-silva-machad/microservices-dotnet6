@@ -9,6 +9,8 @@ builder.Services.AddHttpClient<IProductService, ProductService>(
     c => c.BaseAddress = new Uri(builder.Configuration["ServiceUrls:ProductAPI"])
         );
 
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
